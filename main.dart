@@ -51,6 +51,17 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text('-'),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                //Delete
+                db.collection('책').doc('IT도서')
+                    .get().then( (doc) {
+                  final aaa = doc.data() as Map<String, dynamic>;
+                  print(aaa);
+                });
+              },
+              child: Text('READ'),
+            ),
           ],
         ),
       ),
